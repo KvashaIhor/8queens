@@ -101,12 +101,11 @@ export function EightQueensGame() {
         className={`
           aspect-square flex items-center justify-center text-2xl font-bold transition-all duration-200 hover:scale-105 border border-border/20
           ${isLight ? "bg-pink-100" : "bg-pink-900"}
-          ${hasQueen && isConflicted ? "bg-destructive/20 border-destructive" : ""}
-          ${hasQueen && !isConflicted ? "border-accent" : ""}
+          ${hasQueen && "border-accent"}
           ${!hasQueen ? "hover:bg-primary/10" : ""}
         `}
       >
-        {hasQueen && <Crown className={`w-6 h-6 ${isConflicted ? "text-destructive" : "text-sky-400"}`} />}
+        {hasQueen && <Crown className={`w-6 h-6 text-sky-400`} />}
       </button>
     )
   }

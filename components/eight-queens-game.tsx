@@ -50,10 +50,9 @@ export function EightQueensGame() {
       let newQueens: Position[]
 
       if (existingQueenIndex !== -1) {
-        // Remove queen
+
         newQueens = queens.filter((_, index) => index !== existingQueenIndex)
       } else {
-        // Add queen (limit to 8)
         if (queens.length < 8) {
           newQueens = [...queens, { row, col }]
         } else {
@@ -74,7 +73,7 @@ export function EightQueensGame() {
   }, [])
 
   const solveAutomatically = useCallback(() => {
-    // One of the 92 solutions to the 8-queens problem
+
     const solution: Position[] = [
       { row: 0, col: 0 },
       { row: 1, col: 4 },
@@ -100,7 +99,7 @@ export function EightQueensGame() {
         key={`${row}-${col}`}
         onClick={() => handleSquareClick(row, col)}
         className={`
-          aspect-square flex items-center justify-center text-2xl font-bold transition-all duration-200 hover:scale-105 border border-border/20
+          aspect-square flex items-center justify-center text-2xl font-bold transition-all duration-200 hover:scale-105 border border-border/20 min-w-0 min-h-0 relative overflow-hidden chess-square-noise
           ${isLight ? "bg-pink-100" : "bg-pink-900"}
           ${hasQueen && "border-accent"}
           ${!hasQueen ? "hover:bg-primary/10" : ""}
@@ -112,7 +111,7 @@ export function EightQueensGame() {
             alt="Queen" 
             width={40} 
             height={40} 
-            className={`w-12 h-12`}
+            className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 xl:w-20 xl:h-20 2xl:w-24 2xl:h-24 object-contain`}
           />
         )}
       </button>
@@ -130,9 +129,9 @@ export function EightQueensGame() {
 
       <div className="grid lg:grid-cols-2 gap-8 items-start">
         {/* Game Board */}
-        <Card className="bg-card border-border">
-          <CardContent className="p-6">
-            <div className="grid grid-cols-8 gap-0 border-2 border-border rounded-lg overflow-hidden mx-auto max-w-md">
+        <Card className="bg-card border-border card-noise">
+          <CardContent className="p-3 sm:p-4 md:p-6">
+            <div className="grid grid-cols-8 gap-0 border-2 border-border rounded-lg overflow-hidden mx-auto w-full max-w-[min(90vw,95vh,320px)] sm:max-w-[min(75vw,90vh,420px)] md:max-w-[min(65vw,85vh,540px)] lg:max-w-[min(60vw,80vh,720px)] xl:max-w-[min(55vw,75vh,840px)] 2xl:max-w-[960px]">
               {Array.from({ length: 8 }, (_, row) => Array.from({ length: 8 }, (_, col) => renderSquare(row, col)))}
             </div>
           </CardContent>
@@ -140,7 +139,7 @@ export function EightQueensGame() {
 
         {/* Game Info */}
         <div className="space-y-6">
-          <Card className="bg-card border-border">
+          <Card className="bg-card border-border card-noise">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                                                     <Image 
@@ -185,7 +184,7 @@ export function EightQueensGame() {
             </CardContent>
           </Card>
 
-          <Card className="bg-card border-border">
+          <Card className="bg-card border-border card-noise">
             <CardHeader>
               <CardTitle>Game Controls</CardTitle>
               <CardDescription>Manage your game and get help</CardDescription>

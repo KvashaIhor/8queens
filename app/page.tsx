@@ -5,7 +5,7 @@ import Balatro from "@/components/ui/balatro"
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-background">
+    <main className="relative min-h-screen bg-background background-noise">
       <Balatro 
         color1="#ae4e69"
         color2="#f9b357"

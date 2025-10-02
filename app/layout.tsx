@@ -1,13 +1,9 @@
 import type { Metadata } from 'next'
-import { GeistSans } from 'geist/font/sans'
-import { GeistMono } from 'geist/font/mono'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: '8 Queens',
-  description: 'Created with v0',
-  generator: 'v0.app',
+  title: '8Queens',
 }
 
 export default function RootLayout({
@@ -17,7 +13,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
+      <head>
+        <link
+          rel="preload"
+          href="/balatro.otf"
+          as="font"
+          type="font/otf"
+          crossOrigin="anonymous"
+        />
+        <link rel="icon" href="/queen.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/queen.png" />
+      </head>
+      <body className="font-sans">
         {children}
         <Analytics />
       </body>

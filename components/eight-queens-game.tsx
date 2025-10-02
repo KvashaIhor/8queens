@@ -4,7 +4,8 @@ import { useState, useCallback } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { RotateCcw, Crown, Sparkles } from "lucide-react"
+import { RotateCcw, Sparkles } from "lucide-react"
+import Image from "next/image"
 
 type Position = {
   row: number
@@ -105,19 +106,27 @@ export function EightQueensGame() {
           ${!hasQueen ? "hover:bg-primary/10" : ""}
         `}
       >
-        {hasQueen && <Crown className={`w-6 h-6 text-sky-400`} />}
+        {hasQueen && (
+          <Image 
+            src="/queen.png" 
+            alt="Queen" 
+            width={40} 
+            height={40} 
+            className={`w-12 h-12`}
+          />
+        )}
       </button>
     )
   }
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-4xl">
+    <div className="container mx-auto px-4 py-8 max-w-4xl relative z-10">
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold mb-4 text-balance">8 Queens Puzzle</h1>
-        <p className="text-muted-foreground text-lg text-pretty">
+        <h1 className="text-4xl font-bold mb-4 text-balance text-white drop-shadow-lg">8 Queens Puzzle</h1>
+        <p className="text-white/80 text-lg text-pretty drop-shadow-md">
           Place 8 queens on the chessboard so that none can attack each other
         </p>
-      </div>
+        </div>
 
       <div className="grid lg:grid-cols-2 gap-8 items-start">
         {/* Game Board */}
@@ -134,7 +143,13 @@ export function EightQueensGame() {
           <Card className="bg-card border-border">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-primary" />
+                                                    <Image 
+                      src="/sparkles.png" 
+                      alt="Sparkles" 
+                      width={20} 
+                      height={20} 
+                      className="w-4 h-4"
+                    />
                 Game Status
               </CardTitle>
               <CardDescription>Track your progress and game state</CardDescription>
@@ -153,7 +168,13 @@ export function EightQueensGame() {
               {isSolved && (
                 <div className="p-4 bg-accent/10 border border-accent rounded-lg">
                   <div className="flex items-center gap-2 text-accent font-semibold">
-                    <Crown className="w-5 h-5" />
+                    <Image 
+                      src="/queen.png" 
+                      alt="Queen" 
+                      width={20} 
+                      height={20} 
+                      className="w-5 h-5 drop-shadow-[0_0_4px_rgb(249,179,87)]"
+                    />
                     Puzzle Solved!
                   </div>
                   <p className="text-sm text-muted-foreground mt-1">
@@ -171,12 +192,24 @@ export function EightQueensGame() {
             </CardHeader>
             <CardContent className="space-y-3">
               <Button onClick={resetGame} variant="outline" className="w-full bg-transparent">
-                <RotateCcw className="w-4 h-4 mr-2" />
+                    <Image 
+                      src="/rotate.png" 
+                      alt="Rotate" 
+                      width={20} 
+                      height={20} 
+                      className="w-3 h-3"
+                    />
                 Reset Game
               </Button>
 
               <Button onClick={solveAutomatically} variant="secondary" className="w-full">
-                <Sparkles className="w-4 h-4 mr-2" />
+                                    <Image 
+                      src="/sparkles.png" 
+                      alt="Sparkles" 
+                      width={20} 
+                      height={20} 
+                      className="w-4 h-4"
+                    />
                 Show Solution
               </Button>
             </CardContent>

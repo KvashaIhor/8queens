@@ -3,40 +3,58 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+  font-family: 'Balatro';
+  src: url('/balatro.otf') format('opentype'),
+       url('/balatro.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+/* Apply Balatro font to body and all text elements */
+body, html {
+  font-family: 'Balatro', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, div, button, input, textarea, label {
+  font-family: 'Balatro', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
 :root {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.488 0.243 264.376);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.696 0.17 162.48);
-  --accent-foreground: oklch(0.145 0 0);
-  --destructive: oklch(0.627 0.265 303.9);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
+  --background: #45294b;
+  --foreground: #ffffff;
+  --card: #2a1a2e;
+  --card-foreground: #ffffff;
+  --popover: #2a1a2e;
+  --popover-foreground: #ffffff;
+  --primary: #ae4e69;
+  --primary-foreground: #ffffff;
+  --secondary: #3d2a42;
+  --secondary-foreground: #ffffff;
+  --muted: #3d2a42;
+  --muted-foreground: #ffffff;
+  --accent: #f9b357;
+  --accent-foreground: #ffffff;
+  --destructive: #e74c3c;
+  --destructive-foreground: #ffffff;
+  --border: #6b4371;
+  --input: #6b4371;
+  --ring: #ae4e69;
+  --chart-1: #ae4e69;
+  --chart-2: #f9b357;
+  --chart-3: #8a5a86;
+  --chart-4: #e74c3c;
+  --chart-5: #d4995a;
   --radius: 0.625rem;
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  --sidebar: #2a1a2e;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #ae4e69;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #3d2a42;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #3d2a42;
+  --sidebar-ring: #8a5a86;
 }
 
 @theme inline {

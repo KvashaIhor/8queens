@@ -1,5 +1,5 @@
 {
-  "name": "my-v0-project",
+  "name": "8queens",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -49,6 +49,7 @@
     "lucide-react": "^0.454.0",
     "next": "14.2.16",
     "next-themes": "^0.4.6",
+    "ogl": "^1.0.11",
     "react": "^18",
     "react-day-picker": "9.8.0",
     "react-dom": "^18",
